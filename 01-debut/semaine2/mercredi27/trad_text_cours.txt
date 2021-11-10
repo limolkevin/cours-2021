@@ -1,0 +1,106 @@
+HTML, le langage du web, est l'une des technologies web les plus connues. Le HTML a été utilisé en permanence pour construire l'internet depuis son introduction.
+
+HTML6 arrive - voici un avant-goût
+
+Bien que de nombreuses nouvelles techniques aient rendu le processus de création de sites web plus simple et plus efficace, le HTML a toujours été présent au cœur du processus.
+
+Le HTML5 est apparu en 2014 ; c'était un pas de plus vers la normalisation du langage de balisage hypertexte. La spécification HTML révisée en octobre 2014, était raisonnable.
+
+Les gens attendent maintenant une autre mise à jour, et devinez quoi ? HTML6 est en route.
+
+WHATWG - L'organisme qui régit les spécifications HTML va changer les spécifications HTML de façon continue au fil du temps, et non pas de façon générale en une seule fois (comme le disent les sources).
+
+Dans cet article, nous allons jeter un coup d'oeil sur ce qui va très probablement changer dans HTML6 et sur les nouveautés de HTML6.
+Attachez vos ceintures car nous allons plonger dans le contenu principal.
+
+Table des matières
+
+Balises express
+Support des modales natives
+Possibilité de redimensionner les images
+Bibliothèques dédiées à HTML 6
+Annotations pour les images et les vidéos
+Amélioration de l'authentification
+Menus personnalisés en HTML6
+Appareil photo intégré en HTML6
+Bons microformats
+Apps monopage sans JavaScript
+Conclusion
+Balises express
+Comme leur nom l'indique, ces balises sont express. Des balises telles que le pour le logo de votre page Web peuvent être utilisées.
+De plus, des balises telles que , , , seront disponibles.
+
+Support natif des modales en HTML 6
+L'élément de dialogue fait son apparition dans HTML6. Cet élément est considéré comme l'équivalent des fenêtres modales fonctionnant en JavaScript.
+
+Les éléments de dialogue sont déjà normalisés, mais seuls quelques navigateurs, comme Chrome et les navigateurs Internet Samsung, les prennent totalement en charge. Pas d'inquiétude, il sera bientôt fonctionnel dans tous les navigateurs.
+
+Cet élément, dans son format par défaut, n'apparaîtrait qu'en survol au-dessus de l'endroit où il a été placé.
+
+Pour utiliser une interface de type modal plus courante, vous pouvez ouvrir la méthode modale via JavaScript.
+
+<dialog>
+  <form method="dialog">
+    <input type="submit" value="Ok" />
+    <input type="submit" value="Cancel" />
+  </form>
+</dialog>
+Dans la forme par défaut, l'élément crée un fond gris avec un contenu non interactif en dessous.
+
+Un attribut method peut être utilisé dans les formulaires à l'intérieur de l'élément dialog. Cela permettrait de soumettre la valeur et de repasser la valeur à l'objet dialogue lui-même.
+
+Dans l'ensemble, cet élément de dialogue est utile pour une petite interaction avec l'utilisateur et pour améliorer l'interface utilisateur.
+
+Vous pouvez basculer l'attribut open pour l'ouvrir et le fermer dans le formulaire HTML standard.
+
+<b>Dialog ouvert>
+  <p>Boîte de dialogue construite avec HTML 6</p>
+</dialog>
+La liberté de redimensionner l'image
+Les experts pensent qu'une mise à jour est en route qui permettrait aux navigateurs de redimensionner l'image pour une meilleure expérience de visualisation.
+
+Les navigateurs rencontrent des difficultés pour afficher la meilleure taille d'image concernant la taille du périphérique et de la fenêtre.
+
+Les balises Src et IMG ne sont pas très puissantes pour gérer ce problème. Une nouvelle balise <srcset> pourrait être disponible.
+
+Cette balise pourrait permettre au navigateur de choisir entre plusieurs images pour afficher la meilleure image.
+
+Bibliothèques dédiées de HTML 6
+L'introduction de bibliothèques cachables dans HTML6 sera un pas vers l'amélioration de la productivité des concepteurs de sites Web et des utilisateurs.
+
+Annotations pour les images et les vidéos
+Ce serait formidable si nous pouvions annoter les images et les vidéos en HTML. HTML5 nous offre la possibilité d'interpréter des mots, des phrases et des paragraphes, mais pas les images et les vidéos.
+
+De nombreuses organisations dans le domaine ont proposé des solutions, et il semblerait que WHATWG prenne en compte au moins certaines d'entre elles.
+
+Espérons que nous pourrons bientôt annoter les images et les vidéos dans le HTML.
+
+Amélioration de l'authentification
+Bien que le HTML5 ne soit pas mauvais en termes de sécurité. Les navigateurs et les technologies web offrent également une protection raisonnable. Il ne fait aucun doute que l'on pourrait faire beaucoup plus dans le domaine de l'authentification et de la sécurité.
+
+Les clés peuvent être stockées hors site, ce qui empêcherait l'accès de personnes indésirables et renforcerait l'authentification. L'utilisation de clés intégrées au lieu de cookies, l'amélioration de la signature numérique, etc.
+
+Les gens et les groupes de réflexion ont beaucoup de solutions à proposer, c'est au WHATWG de les accepter ou de les rejeter.
+
+Menus personnalisés en HTML6
+Les balises UI et OL sont bénéfiques mais ne répondent pas à tous les besoins. Une balise ou une balise de menu qui pourrait mieux gérer les éléments interactifs est le besoin de l'heure.
+
+Le menu pourrait gérer des éléments de liste déclenchés par des boutons à l'intérieur du menu.
+
+<menu type="toolbar">
+  <li><button>Coupe</button></li>
+  <li><button>Copier</button></li>
+  <li><button>Coller</button></li>
+</menu>
+Le menu pourrait améliorer les capacités de la liste en HTML, et il pourrait bien fonctionner, même comme une liste habituelle.
+
+Caméra intégrée à HTML6
+HTML6 nous permettrait d'utiliser au mieux la caméra et les médias de notre appareil. Nous pourrions contrôler l'appareil photo, ses effets, ses modes, les images panoramiques, le HDR et d'autres choses encore.
+
+Nous pourrions utiliser n'importe quel média et le réaffecter. Il y a beaucoup de choses qui pourraient être améliorées avec l'appareil photo et HTML6.
+
+De bons microformats
+Souvent, nous avons besoin de définir nos informations générales sur l'internet.
+Les informations générales peuvent être
+
+Traduit avec www.DeepL.com/Translator (version gratuite)

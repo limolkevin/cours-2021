@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Qahiri&display=swap');
+#texte{
+    text-align: justify;
+    color: #ff0000;
+    
+}
+
+#montag {
+    text-align: justify;
+    color: blue;
+    text-shadow: darkolivegreen;
+}
+h1 {
+    font-family: 'Festive';
+    color: coral;
+    text-shadow: 5px 5px 2px darkgrey;
+}
+h2 {
+    font-family: 'Qahiri', sans-serif;
+    color: darkgreen;
+    font-size: 50px;
+}

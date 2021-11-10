@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>formulaire</title>
+    <link rel="stylesheet" href="/semaine2/mercredi27/assets/css/formulaire_css.css">
+</head>
+
+<body>
+    <h3>Utiliser </h3>
+    <div>
+        <form action="reponse_formulaire.php" method="post">
+            <label for="fname">Prénom</label>
+            <input type="text" id="fname" name="fname" placeholder="Votre Prénom...">
+            <label for="lname">Nom de famille</label>
+            <input type="text" id="lname" name="lname" placeholder="Votre Nom de famille">
+            <label for="country">Pays</label>
+            <select id="country" name="country">
+                <option value="australia">Australie</option>
+                <option value="canada">Canada</option>
+                <option value="usa">USA</option>
+            </select>
+            <input type="submit" value="Envoyer">
+            <input type="reset" value="effacer">
+        </form>
+    </div>
+
+</body>
+
+</html>

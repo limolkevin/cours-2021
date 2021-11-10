@@ -1,0 +1,13 @@
+img {
+    height: 50px;
+    width: 50px;
+    padding: auto;
+}
+tr,td {
+    border: solid 1px;
+}   
+table {
+    border: solid black;
+    padding: 8px;
+    border-collapse: collapse;
+}

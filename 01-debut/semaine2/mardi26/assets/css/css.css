@@ -1,0 +1,33 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: blue;
+    background-image: url("../../../lundi25/assets/image/bg.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed
+}
+
+p {
+    padding: 1em;
+    border: 1px solid black;
+}
+
+span {
+    padding: 0.5em;
+    border: 1px solid green;
+    /* On rend la boîte visible, quel que soit son type */
+    background-color: yellow;
+}
+
+.inline {
+    display: inline;
+}
+
+.block {
+    display: block;
+}
+
+.inline-block {
+    display: inline-block;
+}

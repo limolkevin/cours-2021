@@ -1,0 +1,3 @@
+Document.write(affiche le resultat du code a l ecran)
+console.log (utilise le code en arriere plan)
+Node script.js
