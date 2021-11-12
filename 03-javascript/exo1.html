@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Objets JavaScript</h2>
+<p>Une méthode d'objet est une définition de fonction, stockée comme une valeur de propriété..</p>
+
+<p id="demo"></p>
+
+<script>
+// Create an object:
+const person = {
+  firstName: "kevin",
+  lastName: "crazy",
+  cp: 97220,
+  fullName: function() {
+    return this.firstName + " " + this.lastName + " "+ this.cp;
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo").innerHTML = person.fullName();
+</script>
+
+<h2>tp voiture exemple</h2>
+<p>Voiture</p>
+
+<p id="demo1"></p>
+
+<script>
+// Create an object:
+const car = {
+  marque: "audi",
+  couleur: "rouge",
+  cv: "600 cheveaux",
+  fullName: function() {
+    return "ma voiture est une " +this.marque + " de couleur " + this.couleur + " de "+ this.cv + ".";
+  }
+};
+
+// Display data from the object:
+document.getElementById("demo1").innerHTML = car.fullName();
+</script>
+</body>
+</html>
