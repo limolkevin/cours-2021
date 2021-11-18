@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>tableau suite .. .</title>
+    </head>
+    <body>
+        <script>
+            let student = [
+                "Marcelline",
+                "Hamza",
+                "Vincent",
+                "Jimmy",
+                "Kevin",
+                "Alex",
+                "Souleymane"
+            ];
+            var fruits = [
+                "pomme",
+                "poire",
+                "mangue",
+                "fraise",
+                "banane",
+                "mandarine",
+                "banane",
+                "cerise"
+            ];
+            // on cancatene 2 tab
+            var concatenation = student.concat(fruits);
+            document.write(concatenation);
+            //on indique le premier index de l'element choisi du tableau.
+            let result = fruits.indexOf('banane');
+            document.write("<br>" + result);
+            //on indique le dernier index de l'element choisi du tableau.
+            let resultat = fruits.lastIndexOf("cerise");
+            document.write("<br>" + resultat);
+            //on supprime le last element du tableau.
+            last = fruits.pop();
+            document.write("<br> je pop supprime le dernier element  " + last);
+            document.write("<br>" + fruits);
+            //on ajoute des element du tableau.
+            var nb = fruits.push('mangue', 'prune');
+            document.write("<br>" + fruits);
+            //on supprime le premier element du tableau.
+            fruits.shift();
+            document.write("<br> shift " + fruits);
+            //classement alphabetique
+            fruits.sort();
+            document.write("<br>" + fruits);
+        </script>
+    </body>
+</html>
