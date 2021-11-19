@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decouverte de jquery</title>
+</head>
+
+<body>
+  <h1>Manipulation du DOM tableau version HTML</h1>
+<ul>
+    <li>element 1 de la liste </li>
+    <li>element 2 de la liste </li>
+    <li>element 3 de la liste </li>
+    <li>element 4 de la liste </li>
+</ul>
+
+<table>
+    <tr><th>Prenom</th><th>NOM</th></tr>
+    <tr><td>Kevin</td><td>LIMOL</td></tr>
+    <tr><td>hamza</td><td>SAOUD</td></tr>
+    <tr><td>Souleyman</td><td>TOURE</td></tr>
+    <tr><td>Marcelline</td><td>TAMARD</td></tr>
+    <tr><td>Vincent</td><td>PAPIN</td></tr>
+    <tr><td>Alex</td><td>TOURE</td></tr>
+    <tr><td>Jimmy</td><td>SORRET</td></tr>
+    <tr><td>Alex</td><td>DJOUAKA-TEMGOUA</td></tr>
+    <tr><td>Tahar</td><td>FORMATION 44</td></tr>
+</table>
+
+
+  <script src="assets/jquery.3.6.0.js"></script>
+  <script>
+    $(document).ready(function(){
+        //ligne paire
+        $('li').filter(':nth-child(even)').css('color','blue');
+        // ligne impaire
+        $('tr').filter(':nth-child(odd)').css('background-color','red');
+    });
+  </script>
+</body>
+
+</html>
