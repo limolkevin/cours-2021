@@ -115,7 +115,36 @@ function addition($entier1, $entier2)
     }
     echo '<img src="assets/image/1.png">'."<br>";
     echo course(45, 64 , "", 0.2, 0.8);
+    echo "<br>";
 
+//code tahar fonction calcul ------------------------------------------------------------------------
+
+    
+    function calculTableau ($prix_ht, $remise)
+        {
+            $base_ht = $prix_ht - $remise;    
+            $prix_ttc = $base_ht * 1.20; 
+            // stock dans un tableau 
+            $retour = array($base_ht, $prix_ttc);
+            return $retour;
+        }   
+
+        $retour = calculTableau(110, 10);
+        echo'<pre>';                         
+        print_r($retour); 
+        echo'</pre>';
+//test print_r-----------------------------------------------------------------------------------
+    $JourSemaine = array    ("Monday" => "Lundi", 
+                            "Tuesday" => "Mardi", 
+                            "Wednesday" => "Mercredi", 
+                            "Thursday" => "Jeudi", 
+                            "Friday" => "Vendredi", 
+                            "Saturday" => "Samedi", 
+                            "Sunday" => "Dimanche" ) ;
+                            
+        echo'<pre>';                         
+        print_r($JourSemaine);
+        echo'</pre>';  
 
 ?>
     </body>
