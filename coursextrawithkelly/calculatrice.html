@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body></body>
+    <script>
+        //ligne du resultat
+        let result = "";
+        //on definit le chiffre 1 
+        let chiffre1 = prompt("quel est votre premier nombre?");
+        //on definit le calcul + * / - 
+        let signe = prompt("quel est votre calcul?");
+        //on definit le chiffre 2
+        let chiffre2 = prompt("quel est votre second nombre?");
+        // on definit la condition du calcul si le signe est * - + / 
+        if (signe == "fois" || signe == "moins" || signe == "plus" || signe == "divisé") {
+            /*switch case systeme de condition comme if else avec le signe 
+            qui aura différent cas et chaque cas aura son resultat prédéfini*/
+            switch (signe) {
+                case "divisé":
+                    result = chiffre1 / chiffre2;
+                    break;
+                case "fois":
+                    result = chiffre1 * chiffre2;
+                    break;
+                case "plus":
+                    result = parseInt(chiffre1) + parseInt(chiffre2);
+                    break;
+                case "moins":
+                    result = chiffre1 - chiffre2
+                    break;
+                    /*equivalent au else cad si le resultat n'a pas été 
+                    trouver auparavant il nous donne la deuxieme reponse*/
+                default:
+                    result = "pas bon calcul";
+            }
+            document.write(
+            "Le résultat du calcul " + chiffre1 + " " + signe + " " + chiffre2 + " le resul" +
+            "tat de votre caclcul est " + result
+        );
+        }
+        else{
+            document.write("Il faut mettre un signe correct")
+        }
+
+
+    </script>
+</html>

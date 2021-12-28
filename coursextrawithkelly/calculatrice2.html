@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="calccss.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="calc">
+            <div class="screen"></div>
+            <div class="padd">
+                <div class="touch">
+                    <span class="AC">AC</span>
+                    <span class="+">+</span>
+                    <span class="-">-</span>
+                    <span class="*">*</span>
+                    <span class="/">/</span>
+                    <span class="=">=</span>
+                    
+
+                </div>
+                <div class="numbers"> 
+                    <span class="chiffre">0</span>
+                    <span class="chiffre">1</span>
+                    <span class="chiffre">2</span>
+                    <span class="chiffre">3</span>
+                    <span class="chiffre">4</span>
+                    <span class="chiffre">5</span>
+                    <span class="chiffre">6</span>
+                    <span class="chiffre">7</span>
+                    <span class="chiffre">8</span>
+                    <span class="chiffre">9</span>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        let chr=document.getElementsByTagName("chiffre");               
+        chr.addEventListener("click", function() {
+  document.getElementById("demo").innerHTML = "Hello World";
+    });
+    </script>
+</html>

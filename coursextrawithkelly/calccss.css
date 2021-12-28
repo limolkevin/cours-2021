@@ -1,0 +1,73 @@
+
+.calc{
+        width: 500px;
+        height: 600px;
+        border:black solid 3px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+}
+.screen{
+        width: 350px;
+        height: 100px;
+        border:red solid 1px;
+        background: rgba(178, 159, 240, 0.41);
+        margin-bottom: 10px;
+
+}
+.padd{
+        width: 400px;
+        height: 450px;
+        border: blue solid 3px;
+        display: flex;
+        flex-direction: row-reverse;
+
+}
+.touch{
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+}
+.numbers{
+        width:80%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+}
+.touch span{
+        
+        font-size: 55px;
+        margin: 5px;
+        width: 50px;
+        background-color: red;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 5px 5px 5px black;
+}
+.numbers span{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 65px;
+        width: 50px;
+        background-color: rosybrown;
+        border-radius: 50%;
+        margin: 20px;
+        box-shadow: 5px 5px 5px black;
+}
+.numbers span:hover{
+        background-color: blueviolet;
+        font-size: 65px;
+        width: 50px;
+        cursor: pointer;
+}
+.touch span:hover{
+        background-color: rgb(167, 2, 2);
+        width: 50px;
+        font-size: 45px;
+        cursor: pointer;
+}
