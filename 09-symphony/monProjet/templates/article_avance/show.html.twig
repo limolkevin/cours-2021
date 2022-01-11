@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ArticleAvance{% endblock %}
+
+{% block body %}
+    <h1>ArticleAvance</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ article_avance.id }}</td>
+            </tr>
+            <tr>
+                <th>Titre</th>
+                <td>{{ article_avance.titre }}</td>
+            </tr>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ article_avance.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Auteur</th>
+                <td>{{ article_avance.auteur }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ article_avance.description }}</td>
+            </tr>
+            <tr>
+                <th>Img</th>
+                <td>{{ article_avance.img }}</td>
+            </tr>
+            <tr>
+                <th>DateCreation</th>
+                <td>{{ article_avance.dateCreation ? article_avance.dateCreation|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('article_avance_index') }}">back to list</a>
+
+    <a href="{{ path('article_avance_edit', {'id': article_avance.id}) }}">edit</a>
+
+    {{ include('article_avance/_delete_form.html.twig') }}
+{% endblock %}

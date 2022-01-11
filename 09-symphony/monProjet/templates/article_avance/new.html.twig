@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New ArticleAvance{% endblock %}
+
+{% block body %}
+    <h1 class="text-center">Create new ArticleAvance</h1>
+    <div class="container">
+        <div class="row">
+            
+    <div class="col-8 mx-auto">
+        {{ include('article_avance/_form.html.twig') }}
+
+    <a class="btn btn-success btn-block mt-1" href="{{ path('article_avance_index') }}">back to list</a>
+    </div>
+        </div>
+    </div>
+{% endblock %}

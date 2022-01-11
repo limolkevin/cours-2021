@@ -1,0 +1,66 @@
+{% set route = app.request.attributes.get('_route') %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'home' ? 'active' }}" href="{{ path('home') }}">Home
+            <span class="visually-hidden">(current)</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'contact' ? 'active' }}" href="{{ path('contact') }}">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'article_avance_index' ? 'active' }}" href="{{ path('article_avance_index') }}">Article²</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'blog' ? 'active' }}" href="{{ path('blog') }}">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'about' ? 'active' }}" href="{{ path('about') }}">About</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link {{ route == 'calcul' ? 'active' }}" href="{{ path('calcul') }}">Calcul</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'equation' ? 'active' }}" href="{{ path('equation') }}">Equation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'personne_index' ? 'active' }}" href="{{ path('personne_index') }}">Personne</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'affiche_etoiles' ? 'active' }}" href="{{ path('affiche_etoiles') }}">Etoiles</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link {{ route == 'formation_index' ? 'active' }}" href="{{ path('formation_index') }}">Formation</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'pays_index' ? 'active' }}" href="{{ path('pays_index') }}">Pays</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'ville_index' ? 'active' }}" href="{{ path('ville_index') }}">Ville</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'myblog_index' ? 'active' }}" href="{{ path('myblog_index') }}">Myblog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'categorie_index' ? 'active' }}" href="{{ path('categorie_index') }}">Categorie</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ route == 'chart' ? 'active' }}" href="{{ path('chart') }}">Chart</a>
+        </li>
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-sm-2" type="text" placeholder="Search">
+        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>

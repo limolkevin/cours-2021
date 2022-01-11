@@ -1,0 +1,75 @@
+{% extends 'base.html.twig' %} {% block title %}Liste des Articles {% endblock
+%} {% block body %}
+<div class="text-center">
+  <label class="text-center position-relative h1">Liste des Articles </label>
+  <sup>
+    <span class="badge rounded-pill bg-danger">{{ nombre_articles }}</span>
+  </sup>
+  <br>
+  <button class="btn btn-success" onclick="$('#myArticles').toggleClass('d-none')">Afficher liste</button>
+</div>
+<div class="row">
+  <div class="col-4 mx-auto mt-3">
+    <form action="{{ path('recherche_par_categories') }}" method="get">
+
+      <select name="categorieSelect" id="categories" class="form-control">
+        {% for article in categories %}
+          <option value="{{ article.categorie }}">{{ article.categorie }}</option>
+        {% endfor %}
+        
+      </select>
+      <div class="text-center">
+        <input type="submit" value="Recherche" class="btn btn-primary">
+        <button type="submit" class="btn btn-primary">
+          <i class="fa fa-search  btn btn-primary"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+<table class="table" id="myArticles">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Titre</th>
+      <th>Categorie</th>
+      <th>Auteur</th>
+      <th>Description</th>
+      <th>Img</th>
+      <th>DateCreation</th>
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for article_avance in article_avances %}
+    <tr>
+      <td>{{ article_avance.id }}</td>
+      <td>{{ article_avance.titre }}</td>
+      <td>{{ article_avance.categorie }}</td>
+      <td>{{ article_avance.auteur }}</td>
+      <td>{{ article_avance.description }}</td>
+      <td>
+        <img src="{{ article_avance.img }}" alt="" />
+      </td>
+      <td>
+        {{ article_avance.dateCreation ? article_avance.dateCreation|date('Y-m-d H:i:s') : '' }}
+      </td>
+      <td>
+        <a href="{{ path('article_avance_show', { id: article_avance.id }) }}">
+          <i class="fa fa-eye text-primary"></i>
+        </a>
+        <a href="{{ path('article_avance_edit', { id: article_avance.id }) }}">
+          <i class="fa fa-edit text-warning"></i>
+        </a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="8">no records found</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<a href="{{ path('article_avance_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %} {% block title %}Hello ChartController!{%
+endblock %} {% block body %}
+
+<h1>Statistiques</h1>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-8 mx-auto">
+    <pre>
+        {{ dump(categories) }}
+    </pre>
+      <canvas id="myChart" width="400" height="400"></canvas>
+      
+    </div>
+  </div>
+</div>
+
+{% endblock %}

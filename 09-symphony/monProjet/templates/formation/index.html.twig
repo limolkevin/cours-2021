@@ -1,0 +1,90 @@
+{% extends 'base.html.twig' %} {% block title %}Formation index{% endblock %} {%
+block body %}
+<h1 class="text-center">Liste des Formations</h1>
+<div class="text-center">
+    <a class="btn btn-success" href="{{ path('formation_new') }}"><i class="fa fa-plus"></i>Ajout Formation</a>
+
+</div>
+<div class="container-fluid">
+  <div class="row" id="myfilter">
+    <div class="col-4 mx-auto border border-dark rounded mt-3">
+        <form action="{{ path('formation_recherche') }}" method="get">
+          <div class="mb-3">
+            <label for="categorie" class="form-label">Catégories</label>
+            <select name="categorie" id="categorie" class="form-control">
+            <option value="Tous" {{ myCategorie =='tous' ? 'selected' }}>Tous</option>
+              {% for categorie in categories %}
+                <option value="{{categorie.categorie}}" {{ myCategorie == categorie.categorie ? 'selected' }}>{{categorie.categorie}}</option>
+              {% endfor %}
+              
+            </select>
+          </div>
+          <button type="submit" class="btn btn-success w-100 mb-3">Rechercher</button>
+        </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+    {% if msg is defined %}
+    <div class="col-4 text-center mx-auto mt-3">
+      <div class="alert {{ myAlert }}" role="alert">
+        <strong>{{ msg }}</strong>
+      </div>
+    </div>
+    {% endif %}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Description</th>
+            <th>Prix</th>
+            <th>Categorie</th>
+            <th>Duree</th>
+            <th>actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for formation in formations %}
+          {% set mybg = "bg-secondary text-white" %}
+            {% if formation.id is odd %}
+                {% set mybg = "bg-light text-dark" %}
+            {% endif %}
+          <tr class="{{ mybg }}">
+            <td>{{ formation.id }}</td>
+            <td>{{ formation.titre }}</td>
+            <td>{{ formation.description }}</td>
+            {% set myclass = "text-success font-weight-bold"  %}
+            {% if formation.prix > 6000 %}
+                {% set myclass = "text-danger font-weight-bold" %}
+            {% endif %}
+            <td class="{{myclass}}">{{ formation.prix }} €</td>
+            <td>{{ formation.categorie }}</td>
+            <td>{{ formation.duree }} H</td>
+            <td>
+              <a class="btn btn-primary" href="{{ path('formation_show', { id: formation.id }) }}"
+                >
+                <i class="fa fa-eye"></i>
+                </a
+              >
+              <a class=" btn btn-warning" href="{{ path('formation_edit', { id: formation.id }) }}"
+                >
+                <i class="fa fa-edit"></i>
+              </a>
+              <a class=" btn btn-danger" onclick="verifSuppression({{ formation.id }})">
+                <i class="fa fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="7">no records found</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

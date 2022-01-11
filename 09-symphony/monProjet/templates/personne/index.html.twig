@@ -1,0 +1,153 @@
+{% extends 'base.html.twig' %} {% block title %}Personne index{% endblock %} {%
+block body %}
+<div class="text-center my-2">
+    <h1 class="text-center">Liste des Personnes</h1>
+    <a href="{{ path('personne_new') }}" class="btn btn-success"><i class="fas fa-plus-square text-white"></i> Ajouter nouveau</a>
+    
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+    <div id="myFiltres" class="d-none">
+      <div id="filtre1" class="col-12 my-2 border border-dark p-4">
+        <form action="{{ path('recherche_personne') }}" method="get">
+          <label for="recherche">Recherche par prénom:</label>
+          <input type="text" name="recherche" id="recherche">
+          <input type="submit" class="btn btn-primary" value="Rechercher">
+        </form>
+  
+        <form action="{{ path('recherche_sexe') }}" method="get">
+          <label for="sexeRecherche">Recherche par Sexe:</label>
+          <select name="sexeRecherche" id="sexeRecherche">
+            <option value="Tous">Tous</option>
+            <option value="Homme">Homme</option>
+            <option value="Femme">Femme</option>
+          </select>
+          <input type="submit" class="btn btn-primary" value="Rechercher">
+        </form>
+  
+      </div>
+  
+      <div id="filtre2" class="col-12 my-2 mx-auto border border-dark p-4">
+        <div class="col-4 mx-auto">
+          <h2 class="text-center">Filtre</h2>
+          <form action="{{ path('recherche_global') }}" method="get">
+         
+            <div class="mb-3">
+             <label for="prenomRecherche" class="form-label">Recherche par prénom:</label>
+             <input type="text" class="form-control" name="prenomRecherche" id="prenomRecherche" placeholder="Entrer Prénom" title="Entrer Prénom">
+             
+            </div>
+            <div class="mb-3">
+             <label for="nomRecherche" class="form-label">Recherche par Nom:</label>
+             <input type="text" class="form-control" name="nomRecherche" id="nomRecherche" placeholder="Entrer Nom" title="Entrer Nom">      
+            </div>
+            <div class="mb-3">
+             <label for="emailRecherche" class="form-label">Recherche par E-mail:</label>
+             <input type="email" class="form-control" name="emailRecherche" id="emailRecherche" placeholder="Entrer E-mail" title="Entrer E-mail">      
+            </div>
+             <div class="mb-3">
+               <label for="sexeRecherche" class="form-label">Recherche par Sexe:</label>
+               <select name="sexeRecherche" class="form-control" id="sexeRecherche">
+                 <option value="Tous">Tous</option>
+                 <option value="Homme">Homme</option>
+                 <option value="Femme">Femme</option>
+               </select>
+             </div>
+             <div class="mb-3">
+               {# commentaire #}
+               <label for="activeRecherche" class="form-label">Active</label>
+               <select name="activeRecherche" class="form-control" id="activeRecherche">
+                <option value="Tous">Tous</option>
+                <option value="True">Active</option>
+                <option value="False">Inactive</option>
+              </select>
+             </div>
+      
+             <input type="submit" class="btn btn-primary btn-block w-100" value="Rechercher">
+           </form>
+        </div>
+  
+      </div> 
+    </div>
+    <label class="h6">Nombre de personne: {{ personnes|length }}</label>
+    <button class="btn btn-primary" onclick="$('#myFiltres').toggleClass('d-none')">
+      <i class="fa fa-search"></i>
+    </button>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Sexe</th>
+            <th>Date de Naissance</th>
+            <th>Active</th>
+            <th>Email</th>
+            <th>Nombre d'Articles</th>
+            <th>actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% set maxArticles = 0 %}
+          {% set minArticles = 999999999999999999999 %}
+          {% for per in personnes %}
+            {% if maxArticles < per.blogs|length %}
+              {% set maxArticles = per.blogs|length %}
+            {% endif %}  
+            {% if minArticles > per.blogs|length %}
+              {% set minArticles = per.blogs|length %}
+            {% endif %}
+            
+          {% endfor %}
+          {% for personne in personnes %}
+          <tr>
+            <td>{{ personne.id }}</td>
+            <td>{{ personne.nom }}</td>
+            <td>{{ personne.prenom }}</td>
+            <td>
+              {{ personne.sexe == "Homme" ? '<i
+                class="fas fa-male text-primary fa-2x"
+              ></i
+              >' : '<i class="fas fa-female text-danger fa-2x"></i>' }}
+            </td>
+            <td>
+              {{ personne.dateNaiss ? personne.dateNaiss|date('Y-m-d') : '' }}
+            </td>
+            <td>
+              {{ personne.active ? '<i
+                class="fas fa-check-square text-success fa-2x"
+              ></i
+              >' : '<i class="fas fa-lock text-danger fa-2x"></i>' }}
+            </td>
+            <td>{{ personne.email }}</td>
+
+            <td class="{{ personne.blogs|length == maxArticles ? 'bg-danger text-white' }} {{ personne.blogs|length == minArticles ? 'text-success' }}">{{ personne.blogs|length }}</td>
+            <td>
+              <a href="{{ path('personne_show', { id: personne.id }) }}"
+                ><i class="fa fa-eye btn btn-primary"></i></a
+              >
+              <a href="{{ path('personne_edit', { id: personne.id }) }}"
+                ><i class="fa fa-edit btn btn-warning"></i></a
+              >
+              {% set token2 = csrf_token('delete' ~ personne.id) %}
+    
+             
+               <a href="{{ path('mypersonne_delete', {'id': personne.id} ) }}"
+                ><i class="fa fa-trash btn btn-danger"></i></a
+              >
+            </td>
+          </tr>
+          {% else %}
+          <tr>
+            <td colspan="8">no records found</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

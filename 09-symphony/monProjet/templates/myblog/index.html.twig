@@ -1,0 +1,83 @@
+{% extends 'base.html.twig' %} {% block title %}Myblog index{% endblock %} {%
+block body %}
+<div class="text-center">
+  <h1>Liste des Articles</h1>
+  <a href="{{ path('myblog_new') }}" class="btn btn-success"> <i class="fa fa-plus"></i> Ajout Article</a>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-4 mx-auto my-2">
+      <form action="{{ path('myblog_recherche') }}" method="get" class="p-3 border border-dark rounded">
+       
+        <select name="categories" id="categories" class="form-control">
+          <option value="Tous">Tous</option>
+          {% for categorie in categories %}
+            <option value="{{ categorie.id }}" {{ requestCategorie is defined and requestCategorie == categorie.id ? 'selected' }}>{{ categorie.label }}</option>
+          {% endfor %}
+          
+        </select>
+        <input type="submit" value="Recherche" class="btn btn-primary w-100 mt-2">
+      </form>
+    </div>
+  </div>
+</div>
+<h6>Nombre d'articles: {{ myblogs|length }}</h6>
+<table class="table table-striped container-fluid">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Image</th>
+      <th>Auteur</th>
+      <th>Titre</th>
+      <th>Categorie</th>
+      <th>Description</th>
+      <th>DateCreation</th>
+
+      <th>actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for myblog in myblogs %}
+    <tr>
+      <td>{{ myblog.id }}</td>
+      <td>
+        <img
+          class="rounded rounded-circle"
+          src="{{ myblog.img }}"
+          width="100px"
+          height="100px"
+          alt=""
+        />
+      </td>
+      <td>{{ myblog.auteur.prenom }} {{ myblog.auteur.nom }}</td>
+      <td>{{ myblog.titre }}</td>
+      <td>{{ myblog.categorie.label }}</td>
+      <td class="w-25 text-justify">{{ myblog.description }}</td>
+      <td>
+        {{ myblog.dateCreation ? myblog.dateCreation|date('d-m-Y') : '' }}
+      </td>
+
+      <td>
+        <a
+          href="{{ path('myblog_show', { id: myblog.id }) }}"
+          class="btn btn-primary"
+        >
+          <i class="fa fa-eye"></i>
+        </a>
+        <a
+          href="{{ path('myblog_edit', { id: myblog.id }) }}"
+          class="btn btn-warning"
+        >
+          <i class="fa fa-edit"></i>
+        </a>
+      </td>
+    </tr>
+    {% else %}
+    <tr>
+      <td colspan="6">no records found</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %}

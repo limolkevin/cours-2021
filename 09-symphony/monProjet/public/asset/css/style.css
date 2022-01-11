@@ -1,0 +1,20 @@
+span.carousel-control-prev-icon, span.carousel-control-next-icon {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: black;
+}
+.card.mb-3 {
+    height: 100%;
+}
+.cardNoBorder{
+    border: none !important;
+}
+.gm-style-cc {
+    display: none !important;
+}
+.font-weight-bold{
+    font-weight: bold;
+}
+.text-justify{
+    text-align: justify !important;
+}

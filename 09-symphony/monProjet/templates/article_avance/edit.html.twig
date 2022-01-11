@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ArticleAvance{% endblock %}
+
+{% block body %}
+    <h1>Edit ArticleAvance</h1>
+
+    {{ include('article_avance/_form.html.twig', {'button_label': 'Update'}) }}
+
+    <a href="{{ path('article_avance_index') }}">back to list</a>
+
+    {{ include('article_avance/_delete_form.html.twig') }}
+{% endblock %}

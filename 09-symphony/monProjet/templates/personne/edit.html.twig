@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %} {% block title %}Edit Personne{% endblock %} {%
+block body %}
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 mx-auto">
+      <h1>Modifier Personne</h1>
+      {{ include("personne/_form.html.twig", { button_label: "Update" }) }}
+      {{ include("personne/_delete_form.html.twig") }}
+      <a
+        class="btn btn-primary btn-block mt-1"
+        href="{{ path('personne_index') }}"
+        >back to list</a
+      >
+      
+    </div>
+  </div>
+</div>
+{% endblock %}

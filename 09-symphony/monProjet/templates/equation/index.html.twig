@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello EquationController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1>Résolution Equation ax+b=0</h1>
+  
+        <label for="a">a:</label>
+        <input type="number" name="a" id="a" value="1" min="1">
+        <label for="b">b:</label>
+        <input type="number" name="b" id="b" value="0">
+        <button onclick="CalculResultat()">Resultat</button>
+        <div id="myResult">
+
+        </div>
+   
+    <script>
+        function CalculResultat(){
+            var a=$('#a').val();
+            var b=$('#b').val();
+            var x=-b/a;
+            //alert("Resultat x="+x);
+            var msg="<h3>"+a+"x+"+b+"="+"-("+b+"/"+a+")="+x+"</h3>";
+            if(a==0){
+                msg='Division par Zero impossible';
+            }
+            $('#myResult').html(msg);
+        }
+    </script>
+
+</div>
+{% endblock %}

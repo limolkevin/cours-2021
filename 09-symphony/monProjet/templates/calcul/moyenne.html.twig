@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CalculController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+
+<div class="example-wrapper">
+    <h1 class="text-center">Moyenne élève</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form action="{{ path('calcul_moyenne') }}" method="post">
+                    <label for="dc" class="text-left">Devoir de controle</label>
+                    <input type="number" name="dc" value="{{ dc is defined ? dc : 0 }}" min="0" id="dc" class="form-control">
+                    <label for="ds" class="text-left">Devoir de synthèse</label>
+                    <input type="number" name="ds" value="{{ ds is defined ? ds : 0 }}" min="0" id="ds" class="form-control">
+                  <div class="text-center mt-2">
+                    <input type="submit" class="btn btn-success" value="Calculer">
+                    <input type="reset" class="btn btn-danger" value="Effacer">
+                  </div>
+                </form>
+            </div>
+            <div class="col-md-6 bg-light">
+                {% if moyenne is defined %}
+                    <h4>Moyenne: ({{dc}}+({{ds}}*2))/3 ={{ moyenne }}</h4>
+          
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

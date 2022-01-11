@@ -1,0 +1,35 @@
+<div class="row">
+  <h1 class="text-center">Liste des Catégories</h1>
+
+  {% for article in categories %} {% set bgVarClass = random(bgClass) %}
+  <div class="col-md-3 col-lg-2 col-sm-4 mb-4">
+    <div
+      class="card {{
+        bgVarClass
+      }} {{ bgVarClass in ['bg-dark','bg-danger'] ? 'text-white' }} mb-3"
+      style=""
+    >
+      <div class="card-header">Catégorie N°{{ article.id }}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{ article.categorie }}</h4>
+      </div>
+    </div>
+  </div>
+
+  {% endfor %}
+</div>
+
+<div class="row">
+  <h1 class="text-center">Liste des Catégories</h1>
+
+ 
+   <div class="col-4 mx-auto">
+    <select name="categories" id="categories" class="form-control">
+        {% for article in categories %}
+            <option value="{{ article.categorie }}">{{ article.categorie }}</option>
+        {% endfor %}
+    </select>
+   </div>
+
+
+</div>

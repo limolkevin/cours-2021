@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %} {% block title %}New Myblog{% endblock %} {%
+block body %}
+<div class="container">
+  <div class="row">
+    <div class="col-4 mx-auto">
+      <h1 class="text-center">Ajout Article</h1>
+
+      {{ include("myblog/_form.html.twig") }}
+
+      <a href="{{ path('myblog_index') }}" class="btn btn-primary w-100">back to list</a>
+    </div>
+  </div>
+</div>
+{% endblock %}
